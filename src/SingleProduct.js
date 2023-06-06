@@ -7,6 +7,7 @@ import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import { Container } from "./styles/Container";
 import OurImage from "./components/OurImage";
 import { NavLink } from "react-router-dom";
+import NewRatingStar from "./components/ForRating"
 const API = "https://dummyjson.com/products";
 
 
@@ -41,13 +42,13 @@ const SingleProduct = ()=>{
         <div className="grid grid-two-column">
           {/* product Images  */}
           <div className="product_images">
-            <OurImage thumb={images} />
+            <OurImage className="centerimage" thumb={images} />
           </div>
 
           {/* product dAta  */}
           <div className="product-data">
             <h2>{title}</h2>
-            <p>{rating}</p>
+             <NewRatingStar star = {rating}/>
             <h2>{brand}</h2>
             <h2>{category}</h2>
             
@@ -75,7 +76,7 @@ const SingleProduct = ()=>{
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Thapa Delivered </p>
+                <p> Delivery</p>
               </div>
 
               <div className="product-warranty-data">
@@ -106,11 +107,16 @@ const SingleProduct = ()=>{
 const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
+   
     
   }
 
+  .centerimage{
+    margin:auto;
+  }
+
   .newNavigation{
-    // font-size:40px;
+    font-size:40px;
     text-align:end;
     padding-top:20px;
     padding-right:20px;

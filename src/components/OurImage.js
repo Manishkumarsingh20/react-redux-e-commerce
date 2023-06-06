@@ -1,12 +1,20 @@
 import React ,{useState} from "react";
 import styled from "styled-components";
 
+
 const OurImage = ({ thumb  }) => {
+  if (thumb && thumb.length > 0) {
+    // Access the first element of the array
+    var firstElement = thumb[0];
+    // Perform further operations with the first element
+  } else {
+    console.log("The array is either undefined or empty.");
+  }
   
-  // console.log(thumb[0])
+  //  console.log(firstElement)
 
   
-   const [singleImage,setSingleImage] = useState(thumb[0])
+   const [singleImage,setSingleImage] = useState(firstElement)
    
 
 
@@ -14,7 +22,7 @@ const OurImage = ({ thumb  }) => {
      
         <Wrapper>
 
-            <div className="grid grid-four-column">
+            <div className="grid grid-four-column rowitem">
              {Array.isArray(thumb)?thumb.map((curElm, index) => {
           return (
             <figure key={index}>
@@ -50,7 +58,9 @@ const Wrapper = styled.section`
   gap: 1rem;
 
   .grid {
-    flex-direction: row;
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
     justify-items: center;
     align-items: center;
     width: 100%;
