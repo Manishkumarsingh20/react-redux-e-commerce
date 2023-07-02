@@ -197,8 +197,7 @@ const Nav = () => {
             <NavLink
               to="/product"
               className="navbar-link "
-              onClick = {CloseButton}
-              >
+              onClick = {CloseButton}>
               Products
             </NavLink>
           </li>

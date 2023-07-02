@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { NewAppProvider } from "./ContextUse/Provider";
+import {CreateContexFilter} from "./ContextUse/CreateContexFilter"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
 <NewAppProvider>
+<CreateContexFilter>
 <App />
+</CreateContexFilter>
 </NewAppProvider>
 )
 

@@ -8,6 +8,7 @@ import { Container } from "./styles/Container";
 import OurImage from "./components/OurImage";
 import { NavLink } from "react-router-dom";
 import NewRatingStar from "./components/ForRating"
+import AddToCart from "./components/CartSection";
 const API = "https://dummyjson.com/products";
 
 
@@ -16,7 +17,7 @@ const SingleProduct = ()=>{
 
   const {getSingleProduct,singleProduct,SingleLoading} = useProductContext();
   // console.log(getSingleProduct)
-  console.log(singleProduct)
+  // console.log(singleProduct)
  
 
   const {id} = useParams();
@@ -29,7 +30,7 @@ const SingleProduct = ()=>{
   useEffect(()=>{
     getSingleProduct(`${API}/${id}`);
     
-  },[]);
+  },[getSingleProduct]);
 
   if (SingleLoading) {
     return <div className="page_loading">Loading.....</div>;
@@ -96,8 +97,12 @@ const SingleProduct = ()=>{
               <p>
                 Brand :<span> {brand} </span>
               </p>
+              
             </div>
+            <hr></hr>
+            {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
+          
         </div>
       </Container>
     </Wrapper>

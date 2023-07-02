@@ -18,7 +18,7 @@ const Reducer = (state , action) =>{
   }
   if(action.type ==="LIST"){
     const FatureListData = action.payload.filter((CurrentElement)=>{
-      return  CurrentElement.rating > 2;
+      return  CurrentElement.rating > 4.8
       
     })
   
