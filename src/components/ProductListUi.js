@@ -16,4 +16,4 @@ const ProductListUi = ()=>{
   }
 }
 
-export default ProductListUi
+export default ProductListUi 
